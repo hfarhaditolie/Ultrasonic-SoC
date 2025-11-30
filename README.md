@@ -2,8 +2,7 @@
 
 # Large format battery SoC estimation: An ultrasonic sensing and deep transfer learning predictions for heterogeneity
 
-[**Hamidreza Farhadi Tolie**](https://scholar.google.com/citations?user=nzCbjWIAAAAJ&hl=en&authuser=1)<sup>a, b</sup> ·  [**Benjamin Reichmann**]<sup>c</sup> ·  [**James Marco**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>a, b</sup> · [**Zahra Sharif-Khodaei**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>c</sup> ·  [**Mona Faraji Niri**](https://scholar.google.com/citations?user=1PK7IocAAAAJ&hl=en&oi=ao)<sup>a, b</sup>
-
+[**Hamidreza Farhadi Tolie**](https://scholar.google.com/citations?user=nzCbjWIAAAAJ&hl=en&authuser=1)<sup>a, b</sup> ·  **Benjamin Reichmann**<sup>c</sup> ·  [**James Marco**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>a, b</sup> · [**Zahra Sharif-Khodaei**](https://scholar.google.com/citations?user=iy8X1bUAAAAJ&hl=en&authuser=1)<sup>c</sup> ·  [**Mona Faraji Niri**](https://scholar.google.com/citations?user=1PK7IocAAAAJ&hl=en&oi=ao)<sup>a, b</sup>
 <br>
 
 <sup>a</sup> Warwick Manufacturing Group, University of Warwick, Coventry, UK  
