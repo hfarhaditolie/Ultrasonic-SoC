@@ -14,9 +14,9 @@
 <a href="https://github.com/hfarhaditolie/Ultrasonic-SoC">
 <img src="https://img.shields.io/badge/Ultrasonic%20SoC-Dataset%20%26%20Code-blue?style=for-the-badge" alt="Project Badge">
 </a>
-
-<br><br>
+<br>
 </div>
+
 This repository provides the full implementation of a **deep learning–enhanced ultrasonic sensing framework** developed for accurate and real-time **State of Charge (SoC) estimation** in large-format lithium-ion pouch cells.
 
 ---
