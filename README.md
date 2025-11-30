@@ -1,16 +1,14 @@
 <div align="center">
 
-# Ultrasonic Sensing and Deep Learning for Accurate State of Charge (SoC) Estimation in Large-Format Lithium-Ion Batteries
+# Large format battery SoC estimation: An ultrasonic sensing and deep transfer learning predictions for heterogeneity
 
-[**Hamidreza Farhadi Tolie**](https://scholar.google.com/citations?user=nzCbjWIAAAAJ&hl=en&authuser=1)<sup>a, b</sup> ·  
-[**Erdogan Guk**](https://scholar.google.com/citations?user=29k7kPAAAAAJ&hl=en&oi=ao)<sup>a, b</sup> ·  
-[**James Marco**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>a, b</sup> ·  
-[**Mona Faraji Niri**](https://scholar.google.com/citations?user=1PK7IocAAAAJ&hl=en&oi=ao)<sup>a, b</sup>
+[**Hamidreza Farhadi Tolie**](https://scholar.google.com/citations?user=nzCbjWIAAAAJ&hl=en&authuser=1)<sup>a, b</sup> ·  [**Benjamin Reichmann**]<sup>c</sup> ·  [**James Marco**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>a, b</sup> · [**Zahra Sharif-Khodaei**](https://scholar.google.com/citations?user=icR08CQAAAAJ&hl=en&oi=ao)<sup>c</sup> ·  [**Mona Faraji Niri**](https://scholar.google.com/citations?user=1PK7IocAAAAJ&hl=en&oi=ao)<sup>a, b</sup>
 
 <br>
 
 <sup>a</sup> Warwick Manufacturing Group, University of Warwick, Coventry, UK  
 <sup>b</sup> The Faraday Institution, Harwell Science & Innovation Campus, Didcot, UK  
+<sup>c</sup> Department of Aeronautics, Imperial College London, London, UK
 
 <hr>
 
