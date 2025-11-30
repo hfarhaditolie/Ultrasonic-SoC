@@ -28,9 +28,6 @@ This repository provides the full implementation of a **deep learning–enhanced
 > This study investigates **ultrasonic sensing** as a non-invasive and real-time alternative for SoC estimation. Leveraging experimentally collected ultrasonic signals transmitted between **four sensors**, a **customised deep learning framework** is developed that transforms raw waveforms into images and applies transfer learning using strong pre-trained convolutional models.  
 >
 > We demonstrate that using **bidirectional ultrasonic transmission** and **dynamic machine learning–based actuator–receiver selection** significantly improves SoC estimation accuracy compared with traditional data-driven analysis. Furthermore, initial investigations into **self-supervision** reveal promising potential for reducing reliance on conventional ground-truth measurements.  
->
-> The full dataset and source code will be made publicly available at:  
-> **https://github.com/hfarhaditolie/Ultrasonic-SoC**
 
 ---
 
