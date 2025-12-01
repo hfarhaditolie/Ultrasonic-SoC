@@ -39,7 +39,8 @@ X2 = data2[:, :-1]
 
 signal_data = np.vstack((X1, X2))
 SoCs = np.hstack((y1, y2))
-np.save("SoCs.npy",SoCs) #SoCs for all signals
+np.save("../data/SoCs.npy",SoCs) #SoCs for all signals
+np.save("../data/signal_data.npy",signal_data) #Stack signals to be loaded during training
 sample_rate = 100e6
 def save_figure(fig, dir_name, idx):
     """Helper function to save figures"""
