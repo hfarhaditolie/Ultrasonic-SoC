@@ -167,7 +167,7 @@ We acknowledge that the ultrasonic experimental data were originally collected a
 
 ## 📄 Licence
 
-This project is licensed under the **MIT Licence**.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
