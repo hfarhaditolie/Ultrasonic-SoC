@@ -46,18 +46,16 @@ Ultrasonic-SoC/
 │   │   ├── Signal1_2_SoCD_raw.csv
 │   │   ├── Signal1_3_SoCD_raw.csv
 │   │   └── ...
-│   └── README_data.md
+|   ├── waveform_images/
+│   │   ├── waveform_000.png
+│   │   ├── waveform_000.png
+│   │   └── ...
+│   └── SoC.npy
+│   └── signal_data.npy
 │
 ├── src/
-│   ├── preprocessing/
-│   ├── waveform_to_image/
-│   ├── models/
-│   ├── training/
-│   ├── evaluation/
-│   └── utils/
-│
-├── notebooks/
-├── results/
+│   ├── convert.py
+│   ├── convert.py
 └── README.md
 ```
 
