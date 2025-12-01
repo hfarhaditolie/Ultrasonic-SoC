@@ -46,18 +46,16 @@ Ultrasonic-SoC/
 │   │   ├── Signal1_2_SoCD_raw.csv
 │   │   ├── Signal1_3_SoCD_raw.csv
 │   │   └── ...
-│   └── README_data.md
+|   ├── waveform_images/
+│   │   ├── waveform_000.png
+│   │   ├── waveform_000.png
+│   │   └── ...
+│   └── SoCs.npy
+│   └── signal_data.npy
 │
 ├── src/
-│   ├── preprocessing/
-│   ├── waveform_to_image/
-│   ├── models/
-│   ├── training/
-│   ├── evaluation/
-│   └── utils/
-│
-├── notebooks/
-├── results/
+│   ├── convert.py
+│   ├── convert.py
 └── README.md
 ```
 
@@ -79,40 +77,37 @@ Each filename represents a **sensor pair**:
 - `A` → actuator sensor ID  
 - `B` → receiver sensor ID  
 
-Example:  
-- `Signal1_2_SoC_raw.csv` → Sensor 1 actuating → Sensor 2 receiving (charging)  
-- `Signal1_3_SoCD_raw.csv` → Sensor 1 → Sensor 3 (discharging)
+File contents (CSV):
+- Each CSV contains the full ultrasonic waveform for a single acquisition (at one SoC stage).
+- The last column of each CSV file contains the corresponding SoC value for that waveform.
+- All other columns contain the time-series samples (waveform amplitudes).
 
-Each CSV file contains the full ultrasonic waveform acquired at a specific SoC stage.
+Precomputed / derived data:
 
+- Waveform images (spectrograms/waveform plots) are stored in the waveform_images/ folder (one image per acquisition;).
+- Signal arrays for the sensor pair (3, 4) have been pre-saved as:
+  - signal_data.npy — NumPy array of shape (N, L) containing the raw signal vectors
+  - SoCs.npy — NumPy array of shape (N,) containing the matching SoC values
+
+Examples for clarity:
+- Signal1_2_SoC_raw.csv → charging experiment; sensor 1 actuates, sensor 2 receives.
+- Signal1_3_SoCD_raw.csv → discharging experiment; sensor 1 actuates, sensor 3 receives.
+- waveform_images/Signal1_2_SoC_raw.png (or similar) → generated image for that acquisition.
 ---
 
 ## 🚀 Usage
 
-### 1. Install dependencies
-```bash
-pip install -r requirements.txt
-```
 
-### 2. Preprocess the waveforms
+### 1. Convert waveforms to images
 ```bash
-python src/preprocessing/preprocess_signals.py
+python src/convert.py
 ```
-
-### 3. Convert waveforms to images
+use the code above to regenerate the waveform images for the sensor pair you desire, the signal_data.npy needs to be updated accordingly as well.
+### 2. Train/Evaluate the deep learning model
 ```bash
-python src/waveform_to_image/convert.py
+python src/main.py
 ```
-
-### 4. Train the deep learning model
-```bash
-python src/training/train_model.py
-```
-
-### 5. Evaluate performance
-```bash
-python src/evaluation/evaluate.py
-```
+to train and evaluate the model on both K-Fold and holdout training modes run the code above and then specify the mode of training when asked.
 
 ---
 
@@ -123,16 +118,13 @@ python src/evaluation/evaluate.py
 - **Deep CNNs + transfer learning** for improved representation learning  
 - **Bidirectional actuator–receiver signal fusion**  
 - **Dynamic path selection** for optimal sensor pair identification  
-- Early exploration of **self-supervised SoC learning**  
-
 ---
 
 ## 📊 Visual Examples
 
 <p align="center">
-<img src="https://dummyimage.com/800x350/cccccc/000000&text=Ultrasonic+Pipeline+Diagram+(placeholder)" width="80%">
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S2666546825001946-gr1_lrg.jpg" width="80%">
 <br>
-<i>Full figures will be added after dataset release</i>
 </p>
 
 ---
@@ -142,11 +134,17 @@ python src/evaluation/evaluate.py
 If you find this repository useful, please cite our work (BibTeX available upon publication):
 
 ```
-@article{FarhadiTolie2025UltrasonicSoC,
-  title={Ultrasonic Sensing and Deep Learning for Accurate State of Charge Estimation in Large-Format Lithium-Ion Batteries},
-  author={Farhadi Tolie, Hamidreza and Guk, Erdogan and Marco, James and Faraji Niri, Mona},
-  journal={To appear},
-  year={2025}
+@article{FARHADITOLIE2025100662,
+title = {Large format battery SoC estimation: An ultrasonic sensing and deep transfer learning predictions for heterogeneity},
+journal = {Energy and AI},
+pages = {100662},
+year = {2025},
+issn = {2666-5468},
+doi = {https://doi.org/10.1016/j.egyai.2025.100662},
+url = {https://www.sciencedirect.com/science/article/pii/S2666546825001946},
+author = {Hamidreza {Farhadi Tolie} and Benjamin Reichmann and James Marco and Zahra {Sharif Khodaei} and Mona {Faraji Niri}},
+keywords = {Ultrasonic sensing, State of Charge estimation, Deep neural networks, Directional signal analysis, Ultrasonic sensor placement},
+abstract = {Accurate state of charge (SoC) estimation is vital for safe and efficient operation of lithium-ion batteries. Methods such as Coulomb counting and open-circuit voltage measurements face challenges related to drift and accuracy, especially in large-format cells with spatial gradients in electric vehicles and grid storage usage. This study investigates ultrasonic sensing as a non-invasive and real-time technique for SoC estimation. It explores the opportunity of sensor placement using machine learning models to identify optimal actuator–receiver paths based on signal quality and pinpoints the maximum accuracy that can be achieved for SoC estimation. Based on experimentally collected ultrasound signals transmitted between four sensors installed on a large format pouch cell, a novel and customised deep learning framework enhanced by convolutional neural networks is developed to process ultrasonic signals through transformation to waveform images and leverage transfer learning from strong pre-trained models. The results demonstrate that combining bidirectional signal transmission with a dynamic deep learning-based strategy for actuator and receiver selection significantly enhances the effectiveness of ultrasonic sensing compared to traditional data analysis and pave the way for a robust and scalable SoC monitoring in large-format battery cells. Furthermore, preliminary pathways towards self-supervision are explored by examining the differentiability of ultrasonic signals with respect to SoC, offering a promising route to reduce reliance on conventional ground truths and enhance the scalability of ultrasound-based SoC estimation. The data and source code will be made available at https://github.com/hfarhaditolie/Ultrasonic-SoC.}
 }
 ```
 
@@ -163,7 +161,7 @@ For questions, collaborations or feedback:
 
 ## 🙏 Acknowledgements
 
-We thank the Warwick Manufacturing Group and The Faraday Institution for supporting this research, and acknowledge the emerging body of work on ultrasonic diagnostics in electrochemical systems that inspires continued innovation.
+We acknowledge that the ultrasonic experimental data were originally collected at Imperial College London. We thank the Warwick Manufacturing Group (WMG) and The Faraday Institution for supporting this collaborative research. The deep neural network development and data analysis were carried out at WMG, building upon the foundation established by the experimental work performed at Imperial College London.
 
 ---
 
