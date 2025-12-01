@@ -92,7 +92,7 @@ Precomputed / derived data:
 Examples for clarity:
 - Signal1_2_SoC_raw.csv → charging experiment; sensor 1 actuates, sensor 2 receives.
 - Signal1_3_SoCD_raw.csv → discharging experiment; sensor 1 actuates, sensor 3 receives.
-- waveform_images/Signal1_2_SoC_raw.png (or similar) → generated image for that acquisition.
+- waveform_images/waveform_000.png (or similar) → generated image for the first acquisition.
 ---
 
 ## 🚀 Usage
