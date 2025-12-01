@@ -50,7 +50,7 @@ Ultrasonic-SoC/
 │   │   ├── waveform_000.png
 │   │   ├── waveform_000.png
 │   │   └── ...
-│   └── SoC.npy
+│   └── SoCs.npy
 │   └── signal_data.npy
 │
 ├── src/
@@ -77,12 +77,22 @@ Each filename represents a **sensor pair**:
 - `A` → actuator sensor ID  
 - `B` → receiver sensor ID  
 
-Example:  
-- `Signal1_2_SoC_raw.csv` → Sensor 1 actuating → Sensor 2 receiving (charging)  
-- `Signal1_3_SoCD_raw.csv` → Sensor 1 → Sensor 3 (discharging)
+File contents (CSV):
+- Each CSV contains the full ultrasonic waveform for a single acquisition (at one SoC stage).
+- The last column of each CSV file contains the corresponding SoC value for that waveform.
+- All other columns contain the time-series samples (waveform amplitudes).
 
-Each CSV file contains the full ultrasonic waveform acquired at a specific SoC stage.
+Precomputed / derived data:
 
+- Waveform images (spectrograms/waveform plots) are stored in the waveform_images/ folder (one image per acquisition; filenames correspond to the original CSVs where applicable).
+- Signal arrays for the sensor pair (3, 4) have been pre-saved as:
+  - signal_data.npy — NumPy array of shape (N, L) containing the raw signal vectors
+  - SoCs.npy — NumPy array of shape (N,) containing the matching SoC values
+
+Examples for clarity:
+- Signal1_2_SoC_raw.csv → charging experiment; sensor 1 actuates, sensor 2 receives.
+- Signal1_3_SoCD_raw.csv → discharging experiment; sensor 1 actuates, sensor 3 receives.
+- waveform_images/Signal1_2_SoC_raw.png (or similar) → generated image for that acquisition.
 ---
 
 ## 🚀 Usage
