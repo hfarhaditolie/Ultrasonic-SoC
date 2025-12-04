@@ -137,6 +137,7 @@ If you find this repository useful, please cite our work (BibTeX available upon 
 @article{FARHADITOLIE2025100662,
 title = {Large format battery SoC estimation: An ultrasonic sensing and deep transfer learning predictions for heterogeneity},
 journal = {Energy and AI},
+volume = {22},
 pages = {100662},
 year = {2025},
 issn = {2666-5468},
