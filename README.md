@@ -131,7 +131,7 @@ to train and evaluate the model on both K-Fold and holdout training modes run th
 
 ## 📌 Citation
 
-If you find this repository useful, please cite our work (BibTeX available upon publication):
+If you find this repository useful, please cite our work:
 
 ```
 @article{FARHADITOLIE2025100662,
